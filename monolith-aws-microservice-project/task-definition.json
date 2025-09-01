@@ -1,8 +1,8 @@
 {
-  "family": "aws-microservice-project",
+  "family": "crypto-app",
   "containerDefinitions": [
     {
-      "name": "kodekloud-crypto-coin",
+      "name": "crypto-app",
       "image": "211125666158.dkr.ecr.us-east-1.amazonaws.com/crypto-app:latest",
       "essential": true,
       "memory": 512,

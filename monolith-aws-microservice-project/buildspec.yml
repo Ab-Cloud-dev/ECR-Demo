@@ -35,13 +35,13 @@ phases:
       - docker push "$REPOSITORY_URI:latest"
 
       - echo Generating imagedefinitions.json...
-      - printf '[{"name":"%s","imageUri":"%s"}]' "$ECS_CONTAINER_NAME" "$REPOSITORY_URI:$IMAGE_TAG" > task-definition.json
+      - printf '[{"name":"%s","imageUri":"%s"}]' "$ECS_CONTAINER_NAME" "$REPOSITORY_URI:$IMAGE_TAG" > /monolith-aws-microservice-project/task-definition.json
 
       - echo Updating task definition template...
-      - sed -i "s|REPOSITORY_URI_PLACEHOLDER|${REPOSITORY_URI}:${IMAGE_TAG}|g" task-definition.json
+      - sed -i "s|REPOSITORY_URI_PLACEHOLDER|${REPOSITORY_URI}:${IMAGE_TAG}|g" /monolith-aws-microservice-project/task-definition.json
 
       - echo Registering new ECS task definition...
-      - REGISTER_OUTPUT=$(aws ecs register-task-definition --region "$AWS_DEFAULT_REGION" --cli-input-json file://task-definition.json)
+      - REGISTER_OUTPUT=$(aws ecs register-task-definition --region "$AWS_DEFAULT_REGION" --cli-input-json file://monolith-aws-microservice-project/task-definition.json)
 
       - echo Extracting new task definition revision...
       - NEW_REV=$(echo $REGISTER_OUTPUT | jq '.taskDefinition.revision')

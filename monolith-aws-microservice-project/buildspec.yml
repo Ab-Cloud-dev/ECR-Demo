@@ -42,4 +42,4 @@ phases:
 
 artifacts:
   files:
-    - imagedefinitions.json
+    - monolith-aws-microservice-project/imagedefinitions.json

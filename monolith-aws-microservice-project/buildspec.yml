@@ -2,10 +2,10 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: "123456789012"
-    AWS_DEFAULT_REGION: "us-west-2"
-    ECR_REPOSITORY_NAME: "my-app-repo"
-    ECS_CONTAINER_NAME: "my-app-container"
+    AWS_ACCOUNT_ID: "730335578330"
+    AWS_DEFAULT_REGION: "us-east-1"
+    ECR_REPOSITORY_NAME: "crypto-app"
+    ECS_CONTAINER_NAME: "crypto-app"
 
 phases:
   pre_build:

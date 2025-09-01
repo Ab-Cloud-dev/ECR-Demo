@@ -34,4 +34,5 @@ phases:
 
 artifacts:
   files:
-    - imagedefinitions.json
+    - '**/*'
+  name: myname-$(date +%Y-%m-%d) 

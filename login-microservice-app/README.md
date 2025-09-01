@@ -48,7 +48,7 @@ In the ECR registry page, select the registry created. Click on view push comman
 ```
 
 #Authenticate the docker client to the registry created in the previous step using the below commands.
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account_id>.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --stdin <account_id>.dkr.ecr.us-east-1.amazonaws.com
 
 #Build the docker file.
 docker build -t crypto-app .

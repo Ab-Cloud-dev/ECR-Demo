@@ -35,7 +35,7 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"kodekloud-crypto-coin","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > image-definitions.json
+      - printf '[{"name":"kodekloud-crypto-coin","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - ls -alR .
       - echo Registering new ECS Task Definition...
       - sed -i "s;<IMAGE_URI>;$REPOSITORY_URI:latest;g" task-definition.json
@@ -43,4 +43,4 @@ phases:
 
 artifacts:
   files:
-    - image-definitions.json
+    - imagedefinitions.json

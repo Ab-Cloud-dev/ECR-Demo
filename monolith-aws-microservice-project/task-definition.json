@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "kodekloud-crypto-coin",
-      "image": "666234783044.dkr.ecr.eu-central-1.amazonaws.com/aws-microservice:latest",
+      "image": "211125666158.dkr.ecr.us-east-1.amazonaws.com/crypto-app:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
@@ -22,8 +22,8 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-create-group": "true",
-          "awslogs-group": "/ecs/aws-microservice",
-          "awslogs-region": "eu-central-1",
+          "awslogs-group":  "/ecs/crypto-app",
+          "awslogs-region": "eu-east-1",
           "awslogs-stream-prefix": "ecs"
         },
         "secretOptions": []
@@ -40,6 +40,6 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "executionRoleArn": "arn:aws:iam::666234783044:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::211125666158:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc"
 }

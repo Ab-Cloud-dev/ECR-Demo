@@ -35,11 +35,11 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"kodekloud-crypto-coin","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"kodekloud-crypto-coin","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > image-definitions.json
       - echo Registering new ECS Task Definition...
       - sed -i "s;<IMAGE_URI>;$REPOSITORY_URI:latest;g" task-definition.json
       - aws ecs register-task-definition --cli-input-json file://task-definition.json
 
 artifacts:
   files:
-    - imagedefinitions.json
+    - /monolith-aws-microservice-project/image-definitions.json

@@ -40,6 +40,6 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "executionRoleArn": "arn:aws:iam::211125666158:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::619054165770:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc"
 }

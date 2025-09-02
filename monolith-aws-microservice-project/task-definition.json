@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "crypto-app",
-      "image": "748165670380.dkr.ecr.us-east-1.amazonaws.com/crypto-app:latest",
+      "image": "619054165770.dkr.ecr.us-east-1.amazonaws.com/crypto-app:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [

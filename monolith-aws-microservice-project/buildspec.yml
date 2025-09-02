@@ -17,8 +17,12 @@ secrets-manager:
 phases:
   pre_build:
     commands:
-      - echo Logging in to Docker Hub...
-      - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+      - echo "Attempting Docker Hub login..."
+      - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin || echo "Docker login failed (exit code $?)"
+      - echo "Retrying login without stdin..."
+      - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD" || echo "Retry failed with exit code $?"
+      - echo "Contents of ~/.docker/config.json (if exists):"
+      - cat ~/.docker/config.json || echo "config.json not found"
       - echo Logging into Amazon ECR...
       - REPOSITORY_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPOSITORY_NAME"
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI

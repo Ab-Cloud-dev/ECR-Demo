@@ -9,16 +9,23 @@ env:
     ECS_CLUSTER: "microservices-cluster"
     SERVICE_NAME: "crypto-app-service"
     TASK_DEFINITION_FAMILY: "crypto-app"
+    
+secrets-manager:
+    DOCKERHUB_USERNAME: "DOCKERHUB_USERNAME:username"
+    DOCKERHUB_PASSWORD: "/DOCKERHUB_PASSWORD:password"
 
 phases:
   pre_build:
     commands:
+      - echo Logging in to Docker Hub...
+      - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
       - echo Logging into Amazon ECR...
       - REPOSITORY_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPOSITORY_NAME"
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - echo Using image tag:$IMAGE_TAG
+      
 
   build:
     commands:

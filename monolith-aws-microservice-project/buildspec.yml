@@ -18,7 +18,6 @@ phases:
   pre_build:
     commands:
       - echo "Attempting Docker Hub login..."
-      - echo "Password length: ${#DOCKERHUB_PASSWORD}"
       - echo "$DOCKERHUB_PASSWORD" | docker login docker.io --username mabd007 --password-stdin || echo "Docker login failed (exit code $?)"
       - echo "Retrying login without stdin..."
       - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD" || echo "Retry failed with exit code $?"

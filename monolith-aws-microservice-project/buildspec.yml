@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: "748165670380"
+    AWS_ACCOUNT_ID: "619054165770"
     AWS_DEFAULT_REGION: "us-east-1"
     ECR_REPOSITORY_NAME: "crypto-app"
     ECS_CONTAINER_NAME: "crypto-app"

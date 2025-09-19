@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "crypto-app",
-      "image": "619054165770.dkr.ecr.us-east-1.amazonaws.com/crypto-app:latest",
+      "image": "423207801186.dkr.ecr.us-east-1.amazonaws.com/crypto-app:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
@@ -40,6 +40,6 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "executionRoleArn": "arn:aws:iam::619054165770:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::423207801186:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc"
 }

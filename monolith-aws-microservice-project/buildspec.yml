@@ -7,7 +7,7 @@ env:
     ECR_REPOSITORY_NAME: "crypto-app"
     ECS_CONTAINER_NAME: "crypto-app"
     ECS_CLUSTER: "microservices-cluster"
-    SERVICE_NAME: "crypto-app-service"
+    SERVICE_NAME: "crypto-app-service-2eenfe5x"
     TASK_DEFINITION_FAMILY: "crypto-app"
     
 secrets-manager:

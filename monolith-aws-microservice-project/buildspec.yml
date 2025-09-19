@@ -9,8 +9,7 @@ env:
     ECS_CLUSTER: "microservices-cluster"
     SERVICE_NAME: "crypto-app-service-5jotvztk"
     TASK_DEFINITION_FAMILY: "crypto-app"
-    
-     secrets-manager:
+    secrets-manager:
        DOCKERHUB_USERNAME: "Docker-creds:DOCKERHUB_USERNAME"
        DOCKERHUB_PASSWORD: "Docker-creds:DOCKERHUB_PASSWORD"
 

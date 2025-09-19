@@ -2,12 +2,12 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: "524352954549"
+    AWS_ACCOUNT_ID: "423207801186"
     AWS_DEFAULT_REGION: "us-east-1"
     ECR_REPOSITORY_NAME: "crypto-app"
     ECS_CONTAINER_NAME: "crypto-app"
     ECS_CLUSTER: "microservices-cluster"
-    SERVICE_NAME: "crypto-app-service-2eenfe5x"
+    SERVICE_NAME: "crypto-app-service-5jotvztk"
     TASK_DEFINITION_FAMILY: "crypto-app"
     
 secrets-manager:

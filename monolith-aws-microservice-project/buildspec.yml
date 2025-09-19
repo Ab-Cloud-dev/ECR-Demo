@@ -10,9 +10,9 @@ env:
     SERVICE_NAME: "crypto-app-service-5jotvztk"
     TASK_DEFINITION_FAMILY: "crypto-app"
     
-secrets-manager:
-    DOCKERHUB_USERNAME: "DOCKERHUB_USERNAME:username"
-    DOCKERHUB_PASSWORD: "/DOCKERHUB_PASSWORD:password"
+     secrets-manager:
+       DOCKERHUB_USERNAME: "Docker-creds:DOCKERHUB_USERNAME"
+       DOCKERHUB_PASSWORD: "Docker-creds:DOCKERHUB_PASSWORD"
 
 phases:
   pre_build:
